@@ -1,0 +1,16 @@
+
+:root {
+    --primary-color : #1475A9;
+    --white-color : #FFFFFF;
+    --yellow-color : #ffc107;
+    --secand-color :#007bff;
+  }
+
+/* Apply the primary color to the header */
+.bg-primary-color {
+    background-color: var(--primary-color); /* Use the CSS variable */
+}
+
+.icon-color{
+    color: var(--yellow-color);
+}
