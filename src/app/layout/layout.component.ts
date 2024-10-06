@@ -33,7 +33,6 @@ export class LayoutComponent implements OnInit, OnDestroy
     isScreenSmall: boolean;
     navigation: Navigation;
     navigationAppearance: 'default' | 'dense' = 'dense';
-
     /**
      * Constructor
      */

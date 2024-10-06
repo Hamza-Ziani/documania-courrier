@@ -8,7 +8,8 @@ export const defaultNavigation: FuseNavigationItem[] =
             title: 'Courriers récents',
             type : 'basic',
             icon : 'heroicons_outline:clock',
-            link : '/apps/courrier-recents'
+            link : '/apps/courrier-recents',
+
         },
         {
             id   : 'Courriers favoris',
