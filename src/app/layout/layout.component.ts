@@ -13,6 +13,7 @@ import { UserComponent } from 'app/layout/common/user/user.component';
 import { combineLatest, map, Subject, takeUntil } from 'rxjs';
 import { FuseConfig, FuseConfigService } from 'shared/services/config';
 import { FusePlatformService } from 'shared/services/platform/platform.service';
+import { LanguagesComponent } from './common/languages/languages.component';
 
 @Component({
     selector     : 'layout',
@@ -20,7 +21,7 @@ import { FusePlatformService } from 'shared/services/platform/platform.service';
     styleUrls    : ['./layout.component.scss'],
     encapsulation: ViewEncapsulation.None,
     standalone   : true,
-    imports      : [FuseLoadingBarComponent, FuseVerticalNavigationComponent, MatButtonModule, MatIconModule, FuseFullscreenComponent, NgIf, RouterOutlet],
+    imports      : [FuseLoadingBarComponent,LanguagesComponent, FuseVerticalNavigationComponent, MatButtonModule, MatIconModule, FuseFullscreenComponent, NgIf, RouterOutlet],
 })
 export class LayoutComponent implements OnInit, OnDestroy
 {

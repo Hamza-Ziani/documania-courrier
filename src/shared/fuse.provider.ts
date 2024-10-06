@@ -66,7 +66,6 @@ export const provideFuse = (config: FuseProviderConfig): Array<Provider | Enviro
             useValue: () => inject(FuseLoadingService),
             multi   : true,
         },
-
         {
             provide : ENVIRONMENT_INITIALIZER,
             useValue: () => inject(FuseMediaWatcherService),

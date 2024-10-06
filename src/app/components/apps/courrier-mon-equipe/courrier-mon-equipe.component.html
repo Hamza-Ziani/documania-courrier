@@ -31,7 +31,7 @@
                     <mat-tab label="Courrier Mon Equipe">
                         <ng-template matTabContent>
                             <div class="flex justify-center items-center ">
-                                <form class="flex flex-col mt-2 px-2 pt-2 bg-card shadow rounded overflow-hidden" style="width: 80%;">
+                                <form class="flex flex-col mt-2 p-4 bg-card shadow rounded overflow-hidden" style="width: 80%;">
                                     <div class="flex flex-col gt-xs:flex-row">
                                         <mat-form-field class="flex-auto gt-xs:pr-3">
                                             <mat-label>Liste des utilisateurs :</mat-label>
@@ -47,7 +47,7 @@
                                         </mat-form-field>
                                         <mat-form-field class="flex-auto gt-xs:pl-3">
                                             <mat-label>Status</mat-label>
-                                            <mat-select [placeholder]="'Language'">
+                                            <mat-select [placeholder]="'status'">
                                                 <mat-option value="status1">Abondonee</mat-option>
                                                 <mat-option value="status2">En Cours</mat-option>
                                                 <mat-option value="status3">Cloture</mat-option>
@@ -59,7 +59,7 @@
                                         </mat-form-field>
                                     </div>
 
-                                    <div class="flex items-center justify-center border-t -mx-2 mt-1 px-8 py-5 ">
+                                    <div class="flex items-center justify-center p-2">
                                         <!-- Anuler Button with Icon -->
                                         <button mat-flat-button type="button" mat-dialog-close color="warn"
                                             class="px-6 ml-3 mdc-button mdc-button--unelevated mat-mdc-unelevated-button mat-mdc-button-base"
