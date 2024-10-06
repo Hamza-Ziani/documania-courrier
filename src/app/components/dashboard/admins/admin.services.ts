@@ -33,13 +33,13 @@ export class AdminService
     /**
      * Get data
      */
-    getData(): Observable<any>
-    {
-        return this._httpClient.get('api/dashboards/project').pipe(
-            tap((response: any) =>
-            {
-                this._data.next(response);
-            }),
-        );
-    }
+    // getData(): Observable<any>
+    // {
+    //     return this._httpClient.get('api/dashboards/project').pipe(
+    //         tap((response: any) =>
+    //         {
+    //             this._data.next(response);
+    //         }),
+    //     );
+    // }
 }

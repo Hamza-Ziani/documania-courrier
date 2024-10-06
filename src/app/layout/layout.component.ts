@@ -1,34 +1,18 @@
-import { DOCUMENT, NgIf } from '@angular/common';
-import { Component, Inject, OnDestroy, OnInit, Renderer2, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FuseConfig, FuseConfigService } from 'shared/services/config';
-import { FuseMediaWatcherService } from 'shared/services/media-watcher';
-import { FusePlatformService } from 'shared/services/platform';
-import { combineLatest, filter, map, Subject, takeUntil } from 'rxjs';
-import { SettingsComponent } from './common/settings/settings.component';
-import { EmptyLayoutComponent } from './layouts/empty/empty.component';
-import { CenteredLayoutComponent } from './layouts/horizontal/centered/centered.component';
-import { EnterpriseLayoutComponent } from './layouts/horizontal/enterprise/enterprise.component';
-import { MaterialLayoutComponent } from './layouts/horizontal/material/material.component';
-import { ModernLayoutComponent } from './layouts/horizontal/modern/modern.component';
-import { ClassicLayoutComponent } from './layouts/vertical/classic/classic.component';
-import { ClassyLayoutComponent } from './layouts/vertical/classy/classy.component';
-import { CompactLayoutComponent } from './layouts/vertical/compact/compact.component';
-import { DenseLayoutComponent } from './layouts/vertical/dense/dense.component';
-import { FuturisticLayoutComponent } from './layouts/vertical/futuristic/futuristic.component';
-import { ThinLayoutComponent } from './layouts/vertical/thin/thin.component';
-// import { Component, Inject, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { NgIf,DOCUMENT } from '@angular/common';
+import { Component, Inject, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-// import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { FuseFullscreenComponent } from 'shared/components/fullscreen';
 import { FuseLoadingBarComponent } from 'shared/components/loading-bar';
 import { FuseNavigationService, FuseVerticalNavigationComponent } from 'shared/components/navigation';
-// import { FuseMediaWatcherService } from 'shared/services/media-watcher';
+import { FuseMediaWatcherService } from 'shared/services/media-watcher';
 import { NavigationService } from 'app/core/navigation/navigation.service';
 import { Navigation } from 'app/core/navigation/navigation.types';
-// import { combineLatest, map, Subject, takeUntil } from 'rxjs';
-// import { FuseConfig, FuseConfigService } from 'shared/services/config';
+import { UserComponent } from 'app/layout/common/user/user.component';
+import { combineLatest, map, Subject, takeUntil } from 'rxjs';
+import { FuseConfig, FuseConfigService } from 'shared/services/config';
+import { FusePlatformService } from 'shared/services/platform/platform.service';
 
 @Component({
     selector     : 'layout',
@@ -36,11 +20,10 @@ import { Navigation } from 'app/core/navigation/navigation.types';
     styleUrls    : ['./layout.component.scss'],
     encapsulation: ViewEncapsulation.None,
     standalone   : true,
-    imports      : [NgIf, EmptyLayoutComponent, CenteredLayoutComponent, EnterpriseLayoutComponent, MaterialLayoutComponent, ModernLayoutComponent, ClassicLayoutComponent, ClassyLayoutComponent, CompactLayoutComponent, DenseLayoutComponent, FuturisticLayoutComponent, ThinLayoutComponent, SettingsComponent],
+    imports      : [FuseLoadingBarComponent, FuseVerticalNavigationComponent, MatButtonModule, MatIconModule, FuseFullscreenComponent, NgIf, RouterOutlet],
 })
 export class LayoutComponent implements OnInit, OnDestroy
 {
-
     config: FuseConfig;
     layout: string;
     scheme: 'dark' | 'light';

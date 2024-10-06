@@ -8,7 +8,7 @@ export default [
         path     : '',
         component: AdminsComponent,
         resolve  : {
-            data: () => inject(AdminService).getData(),
+            // data: () => inject(AdminService).getData(),
         },
     },
 ] as Routes;
